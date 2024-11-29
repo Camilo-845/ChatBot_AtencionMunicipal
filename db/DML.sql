@@ -35,7 +35,7 @@ VALUES
 ('AG55667', 8, 'maria.torres@example.com', 'Revisión médica', 'Presencial', 'Lunes', '08:30:00', '2024-12-09 08:30:00'),
 ('AG77889', 9, 'luis.martinez@example.com', 'Evaluación física', 'Virtual', 'Martes', '12:00:00', NULL),
 ('AG99001', 10, 'pedro.gomez@example.com', 'Reunión de negocio', 'Presencial', 'Miércoles', '09:00:00', '2024-12-10 09:00:00'),
-('AG12346', 50, 'ana.jimenez@example.com', 'Consulta jurídica', 'Virtual', 'Viernes', '17:00:00', NULL);
+('AG12346', 6, 'ana.jimenez@example.com', 'Consulta jurídica', 'Virtual', 'Viernes', '17:00:00', NULL);
 
 INSERT INTO PQRDS (numero_seguimiento, estado, tipo_solicitud, id_persona, correo_electronico, informacion_solicitud) 
 VALUES 
@@ -49,5 +49,5 @@ VALUES
 ('PQR008', 'Respondido', 'Reclamo', 8, 'maria.torres@example.com', 'El servicio llegó con retraso.'),
 ('PQR009', 'Pendiente', 'Sugerencia', 9, 'luis.martinez@example.com', 'Sugerimos mejorar la calidad del soporte.'),
 ('PQR010', 'Revisado', 'Queja', 10, 'pedro.gomez@example.com', 'El producto no corresponde a lo solicitado.'),
-('PQR049', 'Revisado', 'Petición', 49, 'pedro.sanchez@example.com', 'Solicito cambiar la fecha de mi cita.'),
-('PQR050', 'Respondido', 'Reclamo', 50, 'ana.jimenez@example.com', 'La consulta fue mal realizada.');
+('PQR049', 'Revisado', 'Petición', 6, 'pedro.sanchez@example.com', 'Solicito cambiar la fecha de mi cita.'),
+('PQR050', 'Respondido', 'Reclamo', 2, 'ana.jimenez@example.com', 'La consulta fue mal realizada.');
