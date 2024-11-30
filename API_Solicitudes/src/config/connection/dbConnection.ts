@@ -6,13 +6,14 @@ dotenv.config({
     path: ".env",
 }); 
 
-const db_name = String(process.env.DB_NAME);
-const db_user = String(process.env.DB_USER);
-const db_port = Number(process.env.DB_PORT);
-const db_host = String(process.env.DB_HOST);
-const db_password = String(process.env.DB_PASSWORD);
+const db_name = process.env.DB_NAME || "db_solicitudes";
+const db_user = process.env.DB_USER || "admin";
+const db_password = process.env.DB_PASSWORD || "admin";
+const db_host = process.env.DB_HOST || "localhost";
+const db_port = parseInt(process.env.DB_PORT || "5432", 10);
 
 const pgp = pgPromise(optionsPG);
+console.log("DATOS CONEXION", db_name, db_user, db_password, db_host, db_port);
 const pool = pgp({
     user: db_user,
     password: db_password,

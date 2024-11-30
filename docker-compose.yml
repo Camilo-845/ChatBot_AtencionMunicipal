@@ -12,6 +12,11 @@ services:
       - "5434:5432"
     networks:
       - app_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
   api:
     build: ./API_Solicitudes/
     container_name: API_Solicitudes
@@ -19,13 +24,14 @@ services:
       DB_NAME: db_solicitudes
       DB_USER: admin
       DB_PORT: 5432
-      DB_HOST: db  # Asegúrate de que la API se conecte usando el nombre del servicio
+      DB_HOST: db
       DB_PASSWORD: admin
       PORT: 8080
     ports:
       - "8082:8080"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     volumes:
       - ./server:/usr/src/app
       - /usr/src/app/build
