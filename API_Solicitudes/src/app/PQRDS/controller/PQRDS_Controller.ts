@@ -34,6 +34,16 @@ class PQRDS_Controller extends PQRDS_DAO {
         // Llamar al método para ejecutar la consulta
         PQRDS_Controller.creaPQRDS(data, res);
     }
+
+    public updatePQRS(req: Request, res: Response) {
+        // Extraer datos del cuerpo de la solicitud
+        const { id } = req.params;
+        const {estado} = req.body;
+        // Crear un arreglo con los datos en el orden esperado por la consulta
+        const data = [estado, id];
+        // Llamar
+        PQRDS_Controller.actualizarPQRDS(data, res);
+    }
 }
 
 const agendamientoController = new PQRDS_Controller();

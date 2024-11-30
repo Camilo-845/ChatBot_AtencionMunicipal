@@ -11,6 +11,7 @@ class PQRDS_Route{
 
     private misRutas(){
         this.apiRutaPQRDS.post("",pqrdsController.crearPQRS);
+        this.apiRutaPQRDS.put("/:id",pqrdsController.updatePQRS);
     }
 }
 

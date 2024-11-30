@@ -33,6 +33,19 @@ class PQRDS_DAO {
       res.status(500).json({ result: "Error interno" });
     }
   }
+
+  protected static async actualizarPQRDS(data: any[], res: Response) {
+    try {
+      await pool.none(SQL_PQRDS.UPDATE_PQRDS, data)
+      .then(() => res.status(200).json({ result: "PQRDS actualizado" }))
+      .catch((error) =>
+        this.handleError(error, res, "Error al actualizar la solicitud")
+      );
+    } catch (error) {
+      console.log({ "Error interno": error });
+      res.status(500).json({ result: "Error interno" });
+    }
+  }
 }
 
 export default PQRDS_DAO;

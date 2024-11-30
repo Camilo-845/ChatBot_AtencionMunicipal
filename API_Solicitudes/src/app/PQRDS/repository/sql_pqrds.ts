@@ -11,5 +11,11 @@ export const SQL_PQRDS = {
         INNER JOIN solicitud
         ON solicitud.id_solicitud = pqrds.id_solicitud
         WHERE numero_seguimiento = $1;
+    `,
+
+    UPDATE_PQRDS:`
+        UPDATE pqrds
+        SET estado = $1
+        WHERE id_solicitud = $2;
     `
 };
