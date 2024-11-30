@@ -1,0 +1,21 @@
+meta {
+  name: Asignar o Editar hora y fecha de agendamiento
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{URL}}/agendamiento/:id
+  body: json
+  auth: none
+}
+
+params:path {
+  id: 76
+}
+
+body:json {
+  {
+    "dia_hora_asignados" : "2024-11-29 08:30:00"
+  }
+}

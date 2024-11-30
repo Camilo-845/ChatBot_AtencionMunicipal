@@ -5,7 +5,11 @@ meta {
 }
 
 get {
-  url: {{URL}}/solicitud/
+  url: {{URL}}/solicitud/:numSeg
   body: none
   auth: none
+}
+
+params:path {
+  numSeg: SOL-000076
 }

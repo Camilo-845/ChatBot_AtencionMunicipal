@@ -67,6 +67,20 @@ class AgendamientoDAO {
       res.status(500).json({ result: "Error interno" });
     }
   }
+
+  protected static async updateAgendamiento(data: any, res: Response) {
+    try {
+      await pool
+        .none(SQL_AGENDAMIENTO.UPDATE_AGENDAMIENTO, data)
+        .then(() => res.status(200).json({ result: "Agendamiento actualizado" }))
+        .catch((error) =>
+          this.handleError(error, res, "Error al actualizar el agendamiento")
+        );
+    } catch (error) {
+      console.log({ "Error interno": error });
+      res.status(500).json({ result: "Error interno" });
+    }
+  }
 }
 
 export default AgendamientoDAO;

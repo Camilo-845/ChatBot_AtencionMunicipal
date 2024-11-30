@@ -11,6 +11,7 @@ class AgendamientoRoute{
 
     private misRutas(){
         this.apiRutaAgendamiento.post("",agendamientoController.crearAgendamiento);
+        this.apiRutaAgendamiento.put("/:id",agendamientoController.updateAgendamiento);
     }
 }
 

@@ -25,12 +25,10 @@ class SolicitudesDAO {
             solAgendamiento.estado = solAgendamiento.diaHoraAsignados
                 ? "Agendado" 
                 : "Pendiente";
-            console.log("agendaminto", solAgendamiento);
             return solAgendamiento;
         }
         const solPQRDS= await t.oneOrNone(SQL_PQRDS.GET_PQRDS,[numeroSeguimiento]);
         if(solPQRDS){
-            console.log("pqrds", solPQRDS);
           return solPQRDS;
         }
         throw new Error("Solicitud no encontrada");

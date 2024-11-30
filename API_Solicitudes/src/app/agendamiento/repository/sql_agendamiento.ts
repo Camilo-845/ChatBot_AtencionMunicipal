@@ -17,5 +17,11 @@ export const SQL_AGENDAMIENTO = {
         INNER JOIN solicitud
         ON solicitud.id_solicitud = agendamiento.id_solicitud
         WHERE numero_seguimiento = $1;
+    `,
+
+    UPDATE_AGENDAMIENTO:`
+        UPDATE agendamiento
+        SET dia_hora_asignados = $1
+        WHERE id_solicitud = $2;
     `
 };
