@@ -1,0 +1,34 @@
+meta {
+  name: Agregar solicitudes de agendamiento y que regrese el Número de seguimiento
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{URL}}/agendamiento
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "correo_electronico": "ana.gomez@example.com",
+    "motivo": "Consulta técnica",
+    "tipo_cita": "Virtual",
+    "tipo_persona": "Persona Natural",
+    "primer_nombre": "Ana",
+    "segundo_nombre": null,
+    "primer_apellido": "Gómez",
+    "segundo_apellido": null,
+    "tipo_identificacion": "Cédula de ciudadanía",
+    "numero_identificacion": "9876543210",
+    "fecha_nacimiento": "1990-05-15",
+    "genero": "Femenino",
+    "pais": "Colombia",
+    "direccion": "Avenida 123",
+    "telefono_fijo": "1234567890",
+    "telefono_movil": "3101234567",
+    "dia_solicitado": "Jueves",
+    "hora_solicitada": "15:00:00"
+  }
+}
