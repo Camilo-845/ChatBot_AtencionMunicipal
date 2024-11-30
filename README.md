@@ -18,3 +18,7 @@ docker-compose up -d --build
 #Para detener el proyecto
 docker-compose down -v -rmi all
 ```
+
+## Iniciar Componentes por separado
+- [Base de Datos](./db/)
+- [API Solicitudes](./API_Solicitudes/README.md)
