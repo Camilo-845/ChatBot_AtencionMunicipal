@@ -20,5 +20,6 @@ docker-compose down -v -rmi all
 ```
 
 ## Iniciar Componentes por separado
+Si prefieres ejecutar cada componente por separado
 - [Base de Datos](./db/)
-- [API Solicitudes](./API_Solicitudes/README.md)
+- [API Solicitudes](./API_Solicitudes/)
