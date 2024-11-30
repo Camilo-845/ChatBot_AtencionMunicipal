@@ -3,6 +3,7 @@ import express from "express";
 import morgan from "morgan";
 
 import apiRutaAgendamiento from "../../app/agendamiento/route/AgendamientoRoute";
+import apiRutaPQRDS from "../../app/PQRDS/route/PQRDS_Route";
 
 import dotenv from "dotenv";
 
@@ -22,6 +23,7 @@ class Server{
 
     public exposeEndPoint(){
         this.app.use("/agendamiento", apiRutaAgendamiento);
+        this.app.use("/PQRDS", apiRutaPQRDS);
     }
 
     public chargeConfiguration(){

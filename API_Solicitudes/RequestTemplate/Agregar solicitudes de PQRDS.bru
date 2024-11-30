@@ -1,0 +1,35 @@
+meta {
+  name: Agregar solicitudes de PQRDS
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{URL}}/PQRDS
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "correo": "padres@correo.com",
+      "informacion_solicitud": "Queremos saber más sobre los servicios ofrecidos para menores.",
+      "tipo_solicitud": "Petición",
+      "persona": {
+          "tipo_persona": "Niños, niñas y adolescentes",
+          "primer_nombre": "Juan",
+          "segundo_nombre": "Felipe",
+          "primer_apellido": "García",
+          "segundo_apellido": "López",
+          "tipo_identificacion": "Registro Civil",
+          "numero_identificacion": "RC789456123",
+          "fecha_nacimiento": "2015-07-25",
+          "genero": "Masculino",
+          "pais": "Colombia",
+          "direccion": "Calle 10 #15-20",
+          "telefono_fijo": null,
+          "telefono_movil": "3201234567"
+      }
+  }
+  
+}
