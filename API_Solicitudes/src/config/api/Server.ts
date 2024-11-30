@@ -4,6 +4,7 @@ import morgan from "morgan";
 
 import apiRutaAgendamiento from "../../app/agendamiento/route/AgendamientoRoute";
 import apiRutaPQRDS from "../../app/PQRDS/route/PQRDS_Route";
+import apiRutaSolicitudes from "../../app/solicitudes/route/SolicitudesRoute";
 
 import dotenv from "dotenv";
 
@@ -24,6 +25,7 @@ class Server{
     public exposeEndPoint(){
         this.app.use("/agendamiento", apiRutaAgendamiento);
         this.app.use("/PQRDS", apiRutaPQRDS);
+        this.app.use("/solicitud", apiRutaSolicitudes);
     }
 
     public chargeConfiguration(){

@@ -5,4 +5,11 @@ export const SQL_PQRDS = {
         SELECT solicitud_id, numero_seguimiento 
         FROM crear_solicitud_pqrd($1,$2,$3);
     `,
+    GET_PQRDS:`
+        SELECT pqrds.id_solicitud, id_persona, numero_seguimiento, correo_electronico, estado, tipo_solicitud, informacion_solicitud
+        FROM pqrds
+        INNER JOIN solicitud
+        ON solicitud.id_solicitud = pqrds.id_solicitud
+        WHERE numero_seguimiento = $1;
+    `
 };

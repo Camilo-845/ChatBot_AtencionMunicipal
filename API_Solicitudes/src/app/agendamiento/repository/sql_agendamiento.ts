@@ -11,4 +11,11 @@ export const SQL_AGENDAMIENTO = {
             hora_solicitada => $5      -- hora_solicitada
         );
     `,
+    GET_AGENDAMIENTO:`
+        SELECT solicitud.id_solicitud, numero_seguimiento, id_persona, correo_electronico, motivo, tipo_cita, dia_solicitado, hora_solicitada, dia_hora_asignados
+        FROM agendamiento
+        INNER JOIN solicitud
+        ON solicitud.id_solicitud = agendamiento.id_solicitud
+        WHERE numero_seguimiento = $1;
+    `
 };
